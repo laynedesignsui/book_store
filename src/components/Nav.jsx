@@ -4,6 +4,7 @@ import library_logo from "../assets/Library.svg"
 import { Link } from "react-router-dom"
 
 function Nav({ numberOfItems }) {
+  
   function openMenu() {
     document.body.classList += "menu--open"
   }
