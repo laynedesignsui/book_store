@@ -1,24 +1,34 @@
+//? this code for managing a shopping cart with book-related functionality, including item addition, modification, removal, and item count calculation. It utilizes React Router for navigation with routes such as Home, Book Info, Cart, and Books. It also includes a navigation bar for user interaction
+
+//! IMPORT STYLES
 import "./styles.css";
+//! REACT IMPORTS
 import React, { useState, useEffect } from "react";
+//! PAGE IMPORTS
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import BookInfo from "./pages/BookInfo";
+import Cart from "./pages/Cart";
+import Books from "./pages/Books";
 import {
   BrowserRouter as Router,
   Route,
 } from "react-router-dom";
-import Home from "./pages/Home";
-import Books from "./pages/Books";
+//! CONSTANT IMPORT
 import { books } from "./data";
-import BookInfo from "./pages/BookInfo";
-import Cart from "./pages/Cart";
 
 function App() {
+
+  //? useState for the item's in the cart
   const [cart, setCart] = useState([]);
 
+  //? adds a book to the cart with a quantity of 1
   function addToCart(book) {
     setCart([...cart, { ...book, quantity: 1 }]);
   }
 
+  //? changes the quantity of a specific book in the cart
   function changeQuantity(book, quantity) {
     setCart(
       cart.map((item) =>
@@ -32,10 +42,12 @@ function App() {
     );
   }
 
+  //? removes an item from the cart
   function removeItem(item) {
     setCart(cart.filter((book) => book.id !== item.id));
   }
 
+  //? calculates and returns the total number of items in the cart
   function numberOfItems() {
     let counter = 0;
     cart.forEach(item => {
@@ -43,10 +55,6 @@ function App() {
     })
     return counter
   }
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   return (
     <Router>

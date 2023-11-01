@@ -1,16 +1,20 @@
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import library_logo from "../assets/Library.svg"
-import { Link } from "react-router-dom"
+//! FONT AWESOME IMPORT
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//! PHOTO IMPORT
+import library_logo from "../assets/Library.svg";
+//! REACT ROUTER IMPORT
+import { Link } from "react-router-dom";
 
-function Nav({ numberOfItems }) {
-  
+const Nav = ({ numberOfItems }) => {
+
+  //? function that changes the class name to open
   function openMenu() {
-    document.body.classList += "menu--open"
+    document.body.classList += "menu--open";
   }
 
+  //? function that changes the class name to closed
   function closeMenu() {
-    document.body.classList.remove("menu--open")
+    document.body.classList.remove("menu--open");
   }
 
   return (
@@ -66,7 +70,7 @@ function Nav({ numberOfItems }) {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

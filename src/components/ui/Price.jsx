@@ -1,8 +1,7 @@
-import React from "react"
+//? this component renders book prices, taking salePrice and originalPrice props. It formats and displays them, with a strikethrough for the original price if a sale is present
 
-const Price = ({ salePrice, originalPrice }) => {
-  return (
-    <>
+const Price = ({ salePrice, originalPrice }) => (
+  <>
     <div className="book__price">
       {salePrice ? (
         <>
@@ -15,8 +14,7 @@ const Price = ({ salePrice, originalPrice }) => {
         <>${originalPrice.toFixed(2)}</>
       )}
     </div>
-    </>
-  )
-}
+  </>
+);
 
-export default Price
+export default Price;

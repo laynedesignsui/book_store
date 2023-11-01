@@ -1,4 +1,5 @@
-// FAKE DATA
+//? fake data
+
 export const books = [
     {
       id: 1,
